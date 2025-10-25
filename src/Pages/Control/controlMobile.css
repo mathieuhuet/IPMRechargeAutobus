@@ -1,0 +1,123 @@
+@media (max-width: 1023px) {
+
+  .ControlPage {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .LeftControl {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .MobileControl {
+    display: flex;
+    margin-top: 16px;
+  }
+
+  .RightControl {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Ac {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .LoggedInTempHumi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  
+  .AcState {
+    margin-bottom: 32px;
+    width: 60vw;
+    border-radius: 8px;
+    background-color: #004638;
+    color: #f6f6f6;
+  }
+  
+  h1 {
+    color: #f6f6f6;
+  }
+  
+  .AcButtons {
+    align-self: center;
+    display: flex;
+    width: 300px;
+    justify-content: space-evenly;
+    margin-bottom: 2vh;
+  }
+  
+  .TurnOnButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    border: none;
+    padding: 2vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+  
+  .TurnOnButton:active {
+    cursor: pointer;
+    background-color: #82bf00;
+  }
+  
+  .TurnOffButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    border: none;
+    padding: 2vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+
+  .TurnOffButton:active {
+    cursor: pointer;
+    background-color: #d32f2f;
+  }
+
+  .TriggerLightButton {
+    margin-top: 16px;
+    background-color: #d32f2f;
+    color: #f6f6f6;
+    border: solid 4px #004638;
+    padding: 2vh;
+    border-radius: 10px;
+    font-size: larger;
+  }
+
+  .TriggerLightButton:active {
+    cursor: pointer;
+    background-color: #004638;
+  }
+  
+  .UserPageButton {
+    background-color: #004638;
+    color: #f6f6f6;
+    height: 48px;
+    width: 48px;
+    font-size: 32px;
+    border-radius: 4px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin: 24px 0px 24px 16px;
+  }
+  
+  .UserPageButton:active {
+    background-color: #82bf00;
+    color: #004638;
+  }  
+
+  
+}

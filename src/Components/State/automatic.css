@@ -1,0 +1,34 @@
+@media (min-width: 1024px) {
+
+  .AutomaticState {
+    border: 4px solid #4455ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    margin: 4px;
+  }
+
+  .AutomaticLeft {
+    background-color: #4455ff;
+    color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 4px;
+  }
+
+  .AutomaticRight {
+    background-color: #f6f6f6;
+    color: #4455ff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 4px;
+    font-weight: bold;
+  }
+
+  .UpperBorder {
+    border-top: 2px solid #4455ff;
+  }
+}

@@ -1,0 +1,11 @@
+@media (max-width: 1023px) {
+
+  .Charts {
+    color: black;
+    height: 400px;
+    width: 100vw;
+    font-weight: bold;
+    font-size: larger;
+  }
+    
+}

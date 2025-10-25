@@ -1,0 +1,184 @@
+@media (max-width: 1023px) {
+
+  .LoginPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .Login {
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .Formik {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+  }
+  
+  .Loading {
+    height: 10vh;
+    margin-left: 2vw;
+  }
+  
+  .EmailForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .EmailInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .Email {
+    background-color: #f6f6f6;
+    border: 3px solid #4455ff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+    margin-bottom: 20px;
+  }
+
+  .Password {
+    background-color: #f6f6f6;
+    border: 3px solid #4455ff;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+
+  }
+  
+  h6 {
+    color: red;
+  }
+  
+  .SubmitEmail {
+    background-color: #4455ff;
+    font-size: 16px;
+    height: 8vh;
+    width: 80vw;
+    border-radius: 10px;
+    color: #f6f6f6;
+    border: none;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .SubmitEmail:hover {
+    cursor: pointer;
+  }
+
+  .label {
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    color: #4455ff;
+  }
+
+  .WeatherBoxTemp {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .WeatherBoxHumi {
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+    border-radius: 10px;
+    padding: 8px;
+  }
+
+  .TopWeatherBox {
+    margin-bottom: 2px;
+  }
+
+  .BottomWeatherBox {
+    display: flex;
+    width: 20vw;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .LeftWeatherBox {
+    color: #f6f6f6;
+    background-color: #4455ff;
+    border-radius: 10px;
+    padding: 8px;
+    width: 200px;
+  }
+
+  .RightWeatherBox {
+    color: #f6f6f6;
+    background-color: #307fff;
+    border-radius: 10px;
+    padding: 8px;
+    width: 200px;                               
+  }
+
+  .LoginAcState {
+    font-size: 12px;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    width: 256px;
+    border-radius: 10px;
+    background-color: #4455ff;
+    color: #f6f6f6;
+  }
+
+  .OptionSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 8px;
+  }
+
+  .DateSelect {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    font-weight: 600;
+  }
+
+  .ButtonSelect {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: larger;
+  }
+
+}

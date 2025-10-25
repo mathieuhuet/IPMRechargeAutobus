@@ -1,0 +1,50 @@
+/* MOBILE */
+@media (max-width: 1023px) {
+  .app {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .app-main {
+    max-width: 1280px;
+    width: 100vw;
+    margin-top: 84px;
+  }
+  
+  .error404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    height: 100vh;
+  }
+}
+
+/* DESKTOP */
+@media (min-width: 1024px) {
+  .app {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .app-main {
+    max-width: 1280px;
+    width: 98vw;
+  }
+  
+  .error404 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 36px;
+    height: 100vh;
+  }
+}

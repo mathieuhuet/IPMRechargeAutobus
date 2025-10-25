@@ -1,0 +1,48 @@
+@media (max-width: 1023px) {
+  .header {
+    background-color: #f6f6f6;
+    left: 0;
+    position: fixed;
+    width: 100vw;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #307fff; 
+    z-index: 10;
+    transform: translateY(0%);
+    transition: all 0.5s ease-out;
+  }
+
+  .sticky-hidden {
+    transform: translateY(-200%);
+  }
+
+  .toggle-menu {
+    color: #4455ff;
+    border-top: 4px solid #4455ff;
+    border-bottom: 4px solid #4455ff;
+    font-weight: 700;
+    font-size: 24px;
+    margin-right: 40px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    cursor: pointer;
+  }
+
+  .menu-button {
+    color: #4455ff;
+    font-weight: 700;
+    font-size: 32px;
+    margin: 8px;
+    display: flex;
+    align-items: center;
+  }
+
+  .menu-button:active {
+    border-bottom: 8px solid #307fff;
+    margin-bottom: 0px;
+  }
+
+}

@@ -1,0 +1,48 @@
+@media (min-width: 1024px) {
+  .header {
+    max-width: 1280px;
+    width: 98vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    border-bottom: 10px solid #307fff; 
+  }
+  
+  .header-selection {
+    font-size: 32px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 30px;
+    padding-bottom: 16px;
+    border:none;
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 14px;
+    margin-left: 96px;
+    color: #4455ff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .header-selection:hover {
+    border: none;
+  }
+  
+  .header-selection::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 8px;
+    left: 50%;
+    bottom:0;
+    background:#307fff;
+    transition: all ease-in-out .2s;
+  }
+  
+  .header-selection:hover::after {
+    width: 100%;
+    left: 0;
+  }
+}

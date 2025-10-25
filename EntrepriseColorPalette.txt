@@ -1,0 +1,22 @@
+Grimard
+darkBlue:	#10238c
+lightBlue:	#4455ff
+NeonBlue:	#08d6fe
+
+
+STM
+yellow:		#ffe300
+blue:		#009ddf
+green:		#008e4e
+
+
+STL
+darkBlue:	#395b94
+lightBlue:	#3382ba
+green:		#5ea453
+
+
+RTL
+darkRed:	#9b0000
+lightRed:	#ce0037
+neonRed:	#ee4981
