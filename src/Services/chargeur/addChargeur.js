@@ -1,12 +1,11 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-
-export const turnOnAC = (accessToken) => {
+export const addChargeur = (accessToken, chargeur) => {
   return new Promise((resolve, reject) => {
     axios.post(
-      `${API}/turnonac/`,
-      {data: 'no data'},
+      `${API}/addChargeur/`,
+      chargeur,
       {
         headers: {
           "Content-Type": "application/json",

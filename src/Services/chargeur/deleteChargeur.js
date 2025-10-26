@@ -1,15 +1,16 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-export const getAllDataHistory = (numberOfDays) => {
+export const deleteChargeur = (accessToken, chargeur) => {
   return new Promise((resolve, reject) => {
-    axios.post(
-      `${API}/readAllDataHistory/`, 
-      numberOfDays,
+    axios.delete(
+      `${API}/deleteChargeur/`,
+      chargeur,
       {
         headers: {
           "Content-Type": "application/json",
-        },
+          'Authorization': `Bearer ${accessToken}`
+        }
       }
     ).then((response) => {
       const { data } = response;
@@ -20,8 +21,8 @@ export const getAllDataHistory = (numberOfDays) => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(error);
+        reject(err);
       }
     })
   })
-};
+}

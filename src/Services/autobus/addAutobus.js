@@ -1,15 +1,16 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-export const readInsideTemp = (accessToken) => {
+export const addAutobus = (accessToken, autobus) => {
   return new Promise((resolve, reject) => {
-    axios.get(
-      `${API}/readInsideTemp/`, 
+    axios.post(
+      `${API}/addAutobus/`,
+      autobus,
       {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${accessToken}`
-        },
+          'Authorization': `Bearer ${accessToken}`
+        }
       }
     ).then((response) => {
       const { data } = response;
@@ -20,8 +21,8 @@ export const readInsideTemp = (accessToken) => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(error);
+        reject(err);
       }
     })
   })
-};
+}

@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
 
 export const logoutUser = (accessToken) => {

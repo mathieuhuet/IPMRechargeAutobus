@@ -20,6 +20,7 @@ const Chargeur = (props) => {
     <div>
       {isMobile &&
         <div className='ChargeurPage'>
+        
         </div>
       }
       {!isMobile &&

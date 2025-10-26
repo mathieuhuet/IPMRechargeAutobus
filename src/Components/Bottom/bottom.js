@@ -11,7 +11,7 @@ const Bottom = () => {
     <div className='bottom'>
       <div className='bottom-section'>
         <div className='bottom-selection'>
-          Mathieu Huet  |  mathieuhuet@live.ca  |  2025
+          Mathieu Huet  |  mathieu.huet@grimard.ca  |  2025-2026
         </div>
       </div>
     </div>

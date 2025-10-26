@@ -1,14 +1,16 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-export const getAutomaticModeData = () => {
+export const updateAutobus = (accessToken, autobus) => {
   return new Promise((resolve, reject) => {
-    axios.get(
-      `${API}/getAutomaticModeData/`, 
+    axios.put(
+      `${API}/updateAutobus/`,
+      autobus,
       {
         headers: {
           "Content-Type": "application/json",
-        },
+          'Authorization': `Bearer ${accessToken}`
+        }
       }
     ).then((response) => {
       const { data } = response;
@@ -19,8 +21,8 @@ export const getAutomaticModeData = () => {
           reject(err.response.data);
         }
       } catch (error) {
-        reject(error);
+        reject(err);
       }
     })
   })
-};
+}

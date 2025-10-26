@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-export const readOutsideTemp = (accessToken) => {
+export const getAutobus = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${API}/readOutsideTemp/`, 
+      `${API}/getAutobus/`, 
       {
         headers: {
           "Content-Type": "application/json",

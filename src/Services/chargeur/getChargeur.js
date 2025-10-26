@@ -1,10 +1,10 @@
 import axios from 'axios';
-import { API } from '../../secret';
+import { API } from '../../api';
 
-export const stateOfAC = (accessToken) => {
+export const getChargeur = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${API}/acstate/`, 
+      `${API}/getChargeur/`, 
       {
         headers: {
           "Content-Type": "application/json",
