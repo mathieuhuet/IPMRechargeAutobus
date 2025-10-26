@@ -1,14 +1,15 @@
 @media (min-width: 1024px) {
 
   .LoginPage {
-    height: 1000px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
   }
   
   .Login {
+    margin-top: 5vh;
     width: 90vw;
     display: flex;
     flex-direction: row;
@@ -36,7 +37,7 @@
   
   .Email {
     background-color: #f6f6f6;
-    border: 3px solid #4455ff;
+    border: 3px solid #10238c;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -47,7 +48,7 @@
 
   .Password {
     background-color: #f6f6f6;
-    border: 3px solid #4455ff;
+    border: 3px solid #10238c;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -57,7 +58,6 @@
     margin-bottom: 16px;
   }
   
-  
   h6 {
     color: red;
     margin: 1px;
@@ -65,7 +65,7 @@
   
   .SubmitEmail {
     align-self: flex-end;
-    background-color: #4455ff;
+    background-color: #10238c;
     border-radius: 10px;
     padding: 8px;
     width: 200px;
@@ -82,7 +82,7 @@
   
   .SubmitEmail:hover {
     cursor: pointer;
-    background-color: #307fff;
+    background-color: #4455ff;
   }
 
   .Formik {
@@ -97,87 +97,9 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    color: #4455ff;
+    color: #10238c;
     font-weight: bold;
     margin-top: 20px;
-  }
-
-
-  .WeatherBoxTemp {
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-    border-radius: 10px;
-    padding: 8px;
-  }
-
-  .WeatherBoxHumi {
-    font-size: 24px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 32px;
-    border-radius: 10px;
-    padding: 8px;
-  }
-
-  .TopWeatherBox {
-    margin-bottom: 2px;
-  }
-
-  .BottomWeatherBox {
-    display: flex;
-    width: 20vw;
-    justify-content: space-between;
-  }
-
-  .LeftWeatherBox {
-    color: #f6f6f6;
-    background-color: #4455ff;
-    border-radius: 10px;
-    padding: 8px;
-    width: 200px;
-  }
-
-  .RightWeatherBox {
-    color: #f6f6f6;
-    background-color: #307fff;
-    border-radius: 10px;
-    padding: 8px;
-    width: 200px;                               
-  }
-
-  .LoginAcState {
-    font-size: 16px;
-    margin-top: 32px;
-    width: 12vw;
-    border-radius: 10px;
-    background-color: #4455ff;
-    color: #f6f6f6;
-  }
-
-  .OptionSelect {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 16px;
-    margin-top: -64px;
-  }
-
-  .DateSelect {
-    display: flex;
-    align-items: center;
-    font-weight: 600;
-  }
-
-  .ButtonSelect {
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: larger;
   }
 
 }

@@ -1,9 +1,9 @@
 // Cannot access Login or Register page when signed in
 import { Route, Routes, Navigate } from 'react-router-dom';
-import User from '../Pages/User/user';
-import Control from '../Pages/Control/control';
+import Autobus from '../Pages/Autobus/autobus';
+import Chargeur from '../Pages/Chargeur/chargeur';
+import Historique from '../Pages/Historique/historique';
 import About from '../Pages/About/about';
-
 
 
 const SignedInRoute = (props) => {
@@ -14,20 +14,24 @@ const SignedInRoute = (props) => {
           element={<About />} 
         />
         <Route
-          path="/user"
-          element={<User />}
+          path="/autobus"
+          element={<Autobus />}
         />
         <Route
-          path="/control"
-          element={<Control />}
+          path="/chargeur"
+          element={<Chargeur />}
+        />
+        <Route
+          path="/historique"
+          element={<Historique />}
         />
         <Route
           path="/"
-          element={<Navigate to="/control" replace={true} />}
+          element={<Navigate to="/autobus" replace={true} />}
         />
         <Route
           path="*"
-          element={<Navigate to="/" replace={true} />}
+          element={<Navigate to="/autobus" replace={true} />}
         />
     </Routes>
   )

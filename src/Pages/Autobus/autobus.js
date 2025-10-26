@@ -1,7 +1,6 @@
-import './control.css';
-import './controlMobile.css';
+import './autobus.css';
+import './autobusMobile.css';
 import { useEffect, useState, useMemo } from 'react';
-import User from '../User/user';
 import { useCookies } from "react-cookie";
 import { RiSettings4Line } from "react-icons/ri";
 import { useNavigate } from 'react-router-dom';
@@ -26,7 +25,7 @@ import { getAutomaticModeData } from '../../Services/read/getAutomaticModeData';
 
 
 
-const Control = () => {
+const Autobus = () => {
   let navigate = useNavigate();
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
@@ -154,7 +153,7 @@ const Control = () => {
   return (
     <div>
       {isMobile &&
-        <div className='ControlPage'>
+        <div className='AutobusPage'>
           <div className='LeftControl'>
             <button
               className='TriggerLightButton'
@@ -236,7 +235,6 @@ const Control = () => {
                     </div>
                   </div>
                 </div>
-                <User/>
               </div>
             </div>
           </div>
@@ -435,4 +433,4 @@ const Control = () => {
   );
 };
 
-export default Control;
+export default Autobus;

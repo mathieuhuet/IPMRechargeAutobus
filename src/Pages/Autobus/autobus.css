@@ -1,6 +1,6 @@
 @media (min-width: 1024px) {
 
-  .ControlPage {
+  .AutobusPage {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
@@ -25,7 +25,7 @@
   }
 
   .UserPageButton {
-    background-color: #4455ff;
+    background-color: #10238c;
     align-self: flex-end;
     color: #f6f6f6;
     height: 96px;
@@ -40,11 +40,11 @@
   
   .UserPageButton:hover {
     cursor: pointer;
-    background-color: #307fff;
+    background-color: #4455ff;
   }
   
   .UserPageButton:active {
-    background-color: #307fff;
+    background-color: #4455ff;
     color: #4455ff;
   }  
 
@@ -60,7 +60,7 @@
     margin-bottom: 32px;
     width: 12vw;
     border-radius: 10px;
-    background-color: #4455ff;
+    background-color: #10238c;
     color: #f6f6f6;
   }
   
@@ -76,7 +76,7 @@
   }
   
   .TurnOnButton {
-    background-color: #4455ff;
+    background-color: #10238c;
     color: #f6f6f6;
     border: none;
     padding: 3vh;
@@ -86,16 +86,16 @@
   
   .TurnOnButton:hover {
     cursor: pointer;
-    background-color: #307fff;
+    background-color: #4455ff;
   }
   
   .TurnOnButton:active {
     cursor: pointer;
-    background-color: #307fff;
+    background-color: #4455ff;
   }
   
   .TurnOffButton {
-    background-color: #4455ff;
+    background-color: #10238c;
     color: #f6f6f6;
     border: none;
     padding: 3vh;
@@ -116,7 +116,7 @@
   .TriggerLightButton {
     background-color: #d32f2f;
     color: #f6f6f6;
-    border: solid 4px #4455ff;
+    border: solid 4px #10238c;
     padding: 2vh;
     border-radius: 10px;
     font-size: x-large;
@@ -124,12 +124,12 @@
   
   .TriggerLightButton:hover {
     cursor: pointer;
-    background-color: #4455ff;
+    background-color: #10238c;
   }
   
   .TriggerLightButton:active {
     cursor: pointer;
-    background-color: #4455ff;
+    background-color: #10238c;
     border: solid 4px #d32f2f;
   }
 

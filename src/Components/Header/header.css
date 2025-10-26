@@ -6,7 +6,8 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    border-bottom: 10px solid #307fff; 
+    align-items: center;
+    border-bottom: 10px solid #4455ff; 
   }
   
   .header-selection {
@@ -20,7 +21,7 @@
     transition: all 0.3s ease-in-out;
     margin-bottom: 14px;
     margin-left: 96px;
-    color: #4455ff;
+    color: #10238c;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -37,7 +38,7 @@
     height: 8px;
     left: 50%;
     bottom:0;
-    background:#307fff;
+    background:#4455ff;
     transition: all ease-in-out .2s;
   }
   

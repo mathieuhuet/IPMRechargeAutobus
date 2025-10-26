@@ -3,16 +3,18 @@ import './headerMobile.css';
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { RiRadarFill } from "react-icons/ri";
-import { RiUserHeartFill } from "react-icons/ri";
-import { MdCable } from "react-icons/md";
+import { FaBus } from "react-icons/fa";
+import { MdElectricalServices } from "react-icons/md";
+import { FaClock } from "react-icons/fa";
+import { FaInfoCircle } from "react-icons/fa";
+
+
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import MHRem from '../Icons/MHRem';
 import Logo from '../../Assets/logo-grimard.png';
 
 
@@ -44,40 +46,41 @@ const Header = (props) => {
       <List>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/me')}
+            onClick={() => navigate('/autobus')}
           >
             <div className='menu-button'>
-              {" Autobus "}
-              <RiUserHeartFill />
+              <FaBus />
+              {" Autobus"}
             </div>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/dev')}
+            onClick={() => navigate('/chargeur')}
           >
             <div className='menu-button'>
-              - {` Chargeurs `}
+              <MdElectricalServices />
+              {` Chargeurs`}
             </div>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/telecom')}
+            onClick={() => navigate('/historique')}
           >
             <div className='menu-button'>
-              {" Historique "}
-              <MdCable />
+              <FaClock />
+              {" Historique"}
             </div>
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton
-            onClick={() => navigate('/sti')}
+            onClick={() => navigate('/about')}
           >
             <div className='menu-button'>
+              <FaInfoCircle />
               {" À propos "}
-              <RiRadarFill />
             </div>
           </ListItemButton>
         </ListItem>
@@ -91,6 +94,7 @@ const Header = (props) => {
         >
           <img
             src={Logo}
+            alt='Logo'
             onClick={() => navigate('/')}
           />
         </div>
@@ -137,13 +141,16 @@ const Header = (props) => {
           className={"header" + (!showNavbar ? ' sticky-hidden' : '')} 
           role='banner'
         >
-          <img
-            src={Logo} 
-            width={387}
-            height={77}
-            style={{cursor: 'pointer', marginLeft: 16}}
-            onClick={() => navigate('/login')}
-          />
+          <div>
+            <img
+              src={Logo} 
+              alt='Logo'
+              width={194}
+              height={39}
+              style={{cursor: 'pointer', marginLeft: 16}}
+              onClick={() => navigate('/login')}
+            />
+          </div>
           <React.Fragment>
             <div
               className="toggle-menu"
@@ -168,33 +175,35 @@ const Header = (props) => {
       <div className='header'>
         <img
           src={Logo} 
+          alt='Logo'
           width={194}
           height={39}
-          style={{cursor: 'pointer', marginLeft: 16}}
+          style={{cursor: 'pointer'}}
           onClick={() => navigate('/')}
         />
         <div className='header-selection'
-          onClick={() => navigate('/me')}
+          onClick={() => navigate('/autobus')}
         >
-          {"Autobus"}
-          <RiUserHeartFill />
+          <FaBus />
+          {" Autobus"}
         </div>
         <div className='header-selection'
-          onClick={() => navigate('/dev')}
+          onClick={() => navigate('/chargeur')}
         >
+          <MdElectricalServices />
           {`Chargeurs`}
         </div>
         <div className='header-selection'
-          onClick={() => navigate('/telecom')}
+          onClick={() => navigate('/historique')}
         >
+          <FaClock />
           {"Historique"}
-          <MdCable />
         </div>
         <div className='header-selection'
-          onClick={() => navigate('/sti')}
+          onClick={() => navigate('/about')}
         >
+          <FaInfoCircle />
           {"À propos"}
-          <RiRadarFill />
         </div>
       </div>
     )
