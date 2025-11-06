@@ -4,6 +4,10 @@ import Autobus from '../Pages/Autobus/autobus';
 import Chargeur from '../Pages/Chargeur/chargeur';
 import Historique from '../Pages/Historique/historique';
 import About from '../Pages/About/about';
+import AddAutobus from '../Pages/Autobus/AddAutobus/addAutobus';
+import AddChargeur from '../Pages/Chargeur/AddChargeur/addChargeur';
+import EditAutobus from '../Pages/Autobus/EditAutobus/editAutobus';
+import EditChargeur from '../Pages/Chargeur/EditChargeur/editChargeur';
 
 
 const SignedInRoute = (props) => {
@@ -24,6 +28,22 @@ const SignedInRoute = (props) => {
         <Route
           path="/historique"
           element={<Historique />}
+        />
+        <Route
+          path="/addautobus"
+          element={<AddAutobus />}
+        />
+        <Route
+          path="/addchargeur"
+          element={<AddChargeur />}
+        />
+        <Route 
+          path="/editautobus/:prev/:id" 
+          element={<EditAutobus />} 
+        />
+        <Route 
+          path="/editchargeur/:prev/:id" 
+          element={<EditChargeur />} 
         />
         <Route
           path="/"

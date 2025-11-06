@@ -9,7 +9,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid #4455ff; 
+    border-bottom: 4px solid #3382ba; 
     z-index: 10;
     transform: translateY(0%);
     transition: all 0.5s ease-out;
@@ -20,9 +20,9 @@
   }
 
   .toggle-menu {
-    color: #10238c;
-    border-top: 4px solid #10238c;
-    border-bottom: 4px solid #10238c;
+    color: #395b94;
+    border-top: 4px solid #395b94;
+    border-bottom: 4px solid #395b94;
     font-weight: 700;
     font-size: 24px;
     margin-right: 40px;
@@ -32,7 +32,7 @@
   }
 
   .menu-button {
-    color: #10238c;
+    color: #395b94;
     font-weight: 700;
     font-size: 32px;
     margin: 8px;
@@ -41,7 +41,7 @@
   }
 
   .menu-button:active {
-    border-bottom: 8px solid #4455ff;
+    border-bottom: 8px solid #3382ba;
     margin-bottom: 0px;
   }
 

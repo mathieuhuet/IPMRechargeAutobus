@@ -7,7 +7,8 @@ export const colors = {
   lightGray: "#c3c3c3",
   success: "#22C55E",
   failure: "#EF4444",
-  darkBlue: '#10238c',
-  lightBlue: '#4455ff',
-  NeonBlue: '#08d6fe',
+  darkBlue: '#395b94',
+  lightBlue: '#3382ba',
+  neonBlue: '#08d6fe',
+  green: '#5ea453',
 };

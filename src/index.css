@@ -21,10 +21,10 @@ body::-webkit-scrollbar-track {
   background: #f6f6f6; 
 }
 body::-webkit-scrollbar-thumb {
-  background: #4455ff; 
+  background: #3382ba; 
 }
 body::-webkit-scrollbar-thumb:hover {
-  background: #10238c; 
+  background: #395b94; 
 }
 
 button {

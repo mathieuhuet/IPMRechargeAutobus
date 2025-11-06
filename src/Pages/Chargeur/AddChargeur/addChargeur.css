@@ -1,0 +1,11 @@
+@media (min-width: 1024px) {
+
+  .AddChargeurPage {
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+}

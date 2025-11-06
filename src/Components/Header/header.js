@@ -15,7 +15,7 @@ import List from '@mui/material/List';
 import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import Logo from '../../Assets/logo-grimard.png';
+import Logo from '../../Assets/STL-logo-horizontal-color.svg';
 
 
 
@@ -145,8 +145,7 @@ const Header = (props) => {
             <img
               src={Logo} 
               alt='Logo'
-              width={194}
-              height={39}
+              width={256}
               style={{cursor: 'pointer', marginLeft: 16}}
               onClick={() => navigate('/login')}
             />
@@ -176,8 +175,7 @@ const Header = (props) => {
         <img
           src={Logo} 
           alt='Logo'
-          width={194}
-          height={39}
+          width={256}
           style={{cursor: 'pointer'}}
           onClick={() => navigate('/')}
         />

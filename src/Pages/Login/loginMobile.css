@@ -42,7 +42,7 @@
   
   .Email {
     background-color: #f6f6f6;
-    border: 3px solid #10238c;
+    border: 3px solid #395b94;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -54,7 +54,7 @@
 
   .Password {
     background-color: #f6f6f6;
-    border: 3px solid #10238c;
+    border: 3px solid #395b94;
     border-radius: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -69,7 +69,7 @@
   }
   
   .SubmitEmail {
-    background-color: #10238c;
+    background-color: #395b94;
     font-size: 16px;
     height: 8vh;
     width: 80vw;

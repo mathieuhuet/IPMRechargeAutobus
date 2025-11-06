@@ -13,14 +13,14 @@
   
   .namefield {
     margin-top: 5%;
-    background-color: #10238c;
+    background-color: #395b94;
     width: 30vw;
     border-radius: 10px;
   }
   
   .DisconnectButton {
     margin-top: 5%;
-    background-color: #10238c;
+    background-color: #395b94;
     color: #f6f6f6;
     border: none;
     padding: 3vh;
@@ -30,11 +30,11 @@
   
   .DisconnectButton:hover {
     cursor: pointer;
-    background-color: #4455ff;
+    background-color: #3382ba;
   }
   
   .DisconnectButton:active {
-    background-color: #4455ff;
+    background-color: #3382ba;
     cursor: pointer;
   }
 
