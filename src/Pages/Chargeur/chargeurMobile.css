@@ -7,4 +7,11 @@
     align-items: center;
   }
 
+  .AddChargeur {
+    height: 300px;
+    width: 300px;
+    background-color: #5ea453;
+    color: #f6f6f6;
+  }
+
 }

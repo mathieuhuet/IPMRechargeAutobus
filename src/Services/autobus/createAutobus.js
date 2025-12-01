@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const addAutobus = (accessToken, autobus) => {
+export const createAutobus = (accessToken, autobus) => {
   return new Promise((resolve, reject) => {
     axios.post(
       `${API}/addAutobus/`,

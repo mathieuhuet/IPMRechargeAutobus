@@ -38,13 +38,19 @@ const Autobus = () => {
     <div>
       {isMobile &&
         <div className='AutobusPage'>
-
+          <div className='AddAutobus'
+            onClick={() => navigate('/addautobus')}
+          >
+            Ajouter un Autobus
+          </div>
         </div>
       }
       {!isMobile &&
         <div className='AutobusPage'>
-          <div className='AddAutobus'>
-            
+          <div className='AddAutobus'
+            onClick={() => navigate('/addautobus')}
+          >
+            Ajouter un autobus
           </div>
           <div className='AutobusList'>
             {autobus.map((device) => 

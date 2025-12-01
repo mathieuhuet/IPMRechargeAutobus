@@ -9,12 +9,6 @@ import { useMediaQuery } from 'react-responsive';
 import { useWindowDimensions } from '../../Utilities/windowDimension';
 
 
-/*
-Login Page, where you login when you navigate to the site.
-The Registration form is also on that page.
-*/
-
-
 
 
 

@@ -7,12 +7,6 @@ import { getSingleChargeur } from '../../../Services/chargeur/getSingleChargeur'
 import { useCookies } from "react-cookie";
 
 
-/*
-Login Page, where you login when you navigate to the site.
-The Registration form is also on that page.
-*/
-
-
 
 
 

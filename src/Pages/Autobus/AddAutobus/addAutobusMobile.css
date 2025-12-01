@@ -7,4 +7,90 @@
     align-items: center;
   }
 
+  .Formik {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 64px;
+  }
+  
+  .Loading {
+    height: 10vh;
+    margin-left: 2vw;
+  }
+  
+  .AutobusForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  
+  .AutobusInput {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .rfidInput {
+    background-color: #f6f6f6;
+    border: 3px solid #395b94;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+    margin-bottom: 20px;
+  }
+
+  .nameInput {
+    background-color: #f6f6f6;
+    border: 3px solid #395b94;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+
+  }
+  
+  h6 {
+    color: red;
+  }
+  
+  .SubmitAutobus {
+    background-color: #395b94;
+    font-size: 16px;
+    height: 8vh;
+    width: 80vw;
+    border-radius: 10px;
+    color: #f6f6f6;
+    border: none;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .SubmitAutobus:hover {
+    cursor: pointer;
+  }
+
+  .label {
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-weight: bold;
+    color: #10238c;
+  }
+
 }
