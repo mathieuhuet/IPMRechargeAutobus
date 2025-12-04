@@ -27,7 +27,7 @@ const Autobus = () => {
         for (let i = 0; i < allData.data.length; i++) {
           autobusArray.push(allData.data[i]);
         }
-        setAutobus()
+        setAutobus(autobusArray);
       } else {
         console.log('problem fetching data');
       }
@@ -40,6 +40,20 @@ const Autobus = () => {
     <div>
       {isMobile &&
         <div className='AutobusPage'>
+          <div className='ListeAutobus'>
+            <AutobusComponent 
+              name='Autobus test'
+            />
+            {autobus ? autobus.map((bus) => 
+              <div key={bus.id}>
+              <Link to={'/status/autobus/' + bus.id} style={{textDecoration: 'none'}}>
+                <AutobusComponent
+                  name={bus.name}
+                />
+              </Link>
+              </div>
+            ) : <></>}
+          </div>
           <div className='AddAutobus'
             onClick={() => navigate('/addautobus')}
           >
@@ -50,16 +64,18 @@ const Autobus = () => {
       {!isMobile &&
         <div className='AutobusPage'>
           <div className='ListeAutobus'>
-            <AutobusComponent />
-            {autobus.map((device) => 
-              <div key={device.id}>
-              <Link to={'/device/devices/' + device.id}>
-                <div className='EMCDevice' >
-                  <div className='DeviceTitle'>{device.name}</div>
-                </div>
+            <AutobusComponent 
+              name='Autobus test'
+            />
+            {autobus ? autobus.map((bus) => 
+              <div key={bus.id}>
+              <Link to={'/status/autobus/' + bus.id} style={{textDecoration: 'none'}}>
+                <AutobusComponent
+                  name={bus.name}
+                />
               </Link>
               </div>
-            )}
+            ) : <></>}
           </div>
           <div className='AddAutobus'
             onClick={() => navigate('/addautobus')}

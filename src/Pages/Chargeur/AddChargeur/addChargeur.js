@@ -1,6 +1,7 @@
 import './addChargeur.css';
 import './addChargeurMobile.css';
 import {useState, useEffect, useMemo} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useCookies } from "react-cookie";
 import { useMediaQuery } from 'react-responsive';
 import { Formik } from 'formik';
@@ -14,6 +15,7 @@ import { createChargeur } from '../../../Services/chargeur/createChargeur';
 
 
 const AddChargeur = (props) => {
+  let navigate = useNavigate();
   const [cookies, setCookie] = useCookies(['accessToken']);
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [message, setMessage] = useState('');
@@ -24,8 +26,8 @@ const AddChargeur = (props) => {
     try {
       const result = await createChargeur(credentials, cookies.accessToken);
       if (result.data) {
-
         setMessage('Chargeur a été créer');
+        navigate('/chargeur');
       }
       setSubmitting(false);
     } catch (error) {

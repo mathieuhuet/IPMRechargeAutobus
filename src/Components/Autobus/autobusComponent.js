@@ -17,7 +17,7 @@ const AutobusComponent = (props) => {
   return (
     <div className='AutobusComponent'>
       <div className='NameAutobus'>
-        Autobus Test
+        {props.name}
       </div>
       <div className='StateAutobus'>
         ??

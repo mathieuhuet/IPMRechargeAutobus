@@ -17,7 +17,7 @@ const ChargeurComponent = (props) => {
   return (
     <div className='ChargeurComponent'>
       <div className='NameChargeur'>
-        Chargeur Test
+        {props.name}
       </div>
       <div className='StateChargeur'>
         ??

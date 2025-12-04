@@ -3,6 +3,7 @@ import './addAutobusMobile.css';
 import {useState, useEffect, useMemo} from 'react';
 import { useCookies } from "react-cookie";
 import { useMediaQuery } from 'react-responsive';
+import { useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import Spinner from '../../../Spinner';
 import { createAutobus } from '../../../Services/autobus/createAutobus';
@@ -14,19 +15,20 @@ import { createAutobus } from '../../../Services/autobus/createAutobus';
 
 
 const AddAutobus = (props) => {
+  let navigate = useNavigate();
   const [cookies, setCookie] = useCookies(['accessToken']);
   const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
   const [message, setMessage] = useState('');
   
   const handleCreateAutobus = async (credentials, setSubmitting) => {
-    console.log('MATHIEU TESTSTT');
+    console.log(credentials);
     setMessage('');
     // call backend and move to next page if successful
     try {
       const result = await createAutobus(credentials, cookies.accessToken);
       if (result.data) {
-
         setMessage('Autobus a été créer.');
+        navigate('/autobus');
       }
       setSubmitting(false);
     } catch (error) {
@@ -55,7 +57,7 @@ const AddAutobus = (props) => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
-                handleCreateAutobus({rfid: values.rfid.toLowerCase(), name: values.name}, setSubmitting)
+                handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
               }}
             >
               {({
@@ -128,7 +130,7 @@ const AddAutobus = (props) => {
                 return errors;
               }}
               onSubmit={(values, { setSubmitting }) => {
-                handleCreateAutobus({rfid: values.rfid.toLowerCase(), name: values.name}, setSubmitting)
+                handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
               }}
             >
               {({
