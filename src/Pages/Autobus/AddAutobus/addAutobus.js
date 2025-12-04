@@ -19,6 +19,7 @@ const AddAutobus = (props) => {
   const [message, setMessage] = useState('');
   
   const handleCreateAutobus = async (credentials, setSubmitting) => {
+    console.log('MATHIEU TESTSTT');
     setMessage('');
     // call backend and move to next page if successful
     try {
@@ -47,11 +48,9 @@ const AddAutobus = (props) => {
               validate={values => {
                 const errors = {};
                 if (!values.rfid) {
-                  errors.rfid = 'Requis';
-                } else if (
-                  !/^[A-Z0-9]$/i.test(values.rfid)
-                ) {
-                  errors.rfid = "RFID de l'autobus invalide";
+                  errors.rfid = "RFID de l'autobus requis";
+                } else if (!values.name) {
+                  errors.rfid = "Nom de l'autobus requis";
                 }
                 return errors;
               }}
@@ -122,11 +121,9 @@ const AddAutobus = (props) => {
               validate={values => {
                 const errors = {};
                 if (!values.rfid) {
-                  errors.rfid = 'Requis';
-                } else if (
-                  !/^[A-Z0-9]$/i.test(values.rfid)
-                ) {
-                  errors.rfid = "RFID de l'autobus invalide";
+                  errors.rfid = "RFID de l'autobus requis";
+                } else if (!values.name) {
+                  errors.rfid = "Nom de l'autobus requis";
                 }
                 return errors;
               }}

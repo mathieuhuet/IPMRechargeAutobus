@@ -6,6 +6,8 @@ import { useNavigate, Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { getUserInfo } from '../../Services/user/getUserInfo';
 import { getAutobus } from '../../Services/autobus/getAutobus';
+import AutobusComponent from '../../Components/Autobus/autobusComponent';
+import { TiPlus } from "react-icons/ti";
 
 
 
@@ -41,18 +43,14 @@ const Autobus = () => {
           <div className='AddAutobus'
             onClick={() => navigate('/addautobus')}
           >
-            Ajouter un Autobus
+            <TiPlus />
           </div>
         </div>
       }
       {!isMobile &&
         <div className='AutobusPage'>
-          <div className='AddAutobus'
-            onClick={() => navigate('/addautobus')}
-          >
-            Ajouter un autobus
-          </div>
-          <div className='AutobusList'>
+          <div className='ListeAutobus'>
+            <AutobusComponent />
             {autobus.map((device) => 
               <div key={device.id}>
               <Link to={'/device/devices/' + device.id}>
@@ -62,6 +60,11 @@ const Autobus = () => {
               </Link>
               </div>
             )}
+          </div>
+          <div className='AddAutobus'
+            onClick={() => navigate('/addautobus')}
+          >
+            <TiPlus />
           </div>
         </div>
       }

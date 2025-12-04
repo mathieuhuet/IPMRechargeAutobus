@@ -2,7 +2,8 @@ import './chargeur.css';
 import './chargeurMobile.css';
 import { useMediaQuery } from 'react-responsive';
 import { useNavigate, Link } from 'react-router-dom';
-
+import ChargeurComponent from '../../Components/Chargeur/chargeurComponent';
+import { TiPlus } from "react-icons/ti";
 
 
 
@@ -14,19 +15,27 @@ const Chargeur = (props) => {
     <div>
       {isMobile &&
         <div className='ChargeurPage'>
+          <div className='ListeChargeur'>
+            <ChargeurComponent />
+            <ChargeurComponent />
+          </div>
           <div className='AddChargeur'
             onClick={() => navigate('/addchargeur')}
           >
-            Ajouter un chargeur
+            <TiPlus />
           </div>
         </div>
       }
       {!isMobile &&
         <div className='ChargeurPage'>
+          <div className='ListeChargeur'>
+            <ChargeurComponent />
+            <ChargeurComponent />
+          </div>
           <div className='AddChargeur'
             onClick={() => navigate('/addchargeur')}
           >
-            Ajouter un chargeur
+            <TiPlus />
           </div>
         </div>
       }

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const createChargeur = (accessToken, chargeur) => {
+export const createChargeur = (chargeur, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.post(
       `${API}/addChargeur/`,

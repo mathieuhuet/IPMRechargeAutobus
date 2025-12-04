@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const updateAutobus = (accessToken, autobus) => {
+export const updateAutobus = (autobus, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.put(
       `${API}/updateAutobus/`,

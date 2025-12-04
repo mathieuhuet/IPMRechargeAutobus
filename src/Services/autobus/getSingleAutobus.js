@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const getSingleAutobus = (accessToken, id) => {
+export const getSingleAutobus = (id, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
       `${API}/getSingleAutobus/${id}`, 

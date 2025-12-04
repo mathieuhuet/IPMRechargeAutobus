@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const deleteChargeur = (accessToken, chargeur) => {
+export const deleteChargeur = (chargeur, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.delete(
       `${API}/deleteChargeur/`,

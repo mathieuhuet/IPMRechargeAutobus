@@ -47,11 +47,9 @@ const AddChargeur = (props) => {
               validate={values => {
                 const errors = {};
                 if (!values.rfid) {
-                  errors.rfid = 'Required';
-                } else if (
-                  !/^[A-Z0-9]$/i.test(values.rfid)
-                ) {
-                  errors.rfid = 'Invalid email address';
+                  errors.rfid = "RFID du chargeur requis";
+                } else if (!values.name) {
+                  errors.rfid = "Nom du chargeur requis";
                 }
                 return errors;
               }}
@@ -122,11 +120,9 @@ const AddChargeur = (props) => {
               validate={values => {
                 const errors = {};
                 if (!values.rfid) {
-                  errors.rfid = 'Required';
-                } else if (
-                  !/^[A-Z0-9]$/i.test(values.rfid)
-                ) {
-                  errors.rfid = 'Invalid email address';
+                  errors.rfid = "RFID du chargeur requis";
+                } else if (!values.name) {
+                  errors.rfid = "Nom du chargeur requis";
                 }
                 return errors;
               }}

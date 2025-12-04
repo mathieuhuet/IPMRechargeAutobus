@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { API } from '../../api';
 
-export const getSingleChargeur = (accessToken, id) => {
+export const getSingleChargeur = (id, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
       `${API}/getSingleChargeur/${id}`, 

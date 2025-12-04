@@ -1,0 +1,37 @@
+@media (min-width: 1024px) {
+
+  .AutobusComponent {
+    color: #f6f6f6;
+    background-color: #395b94;
+    border: 3px solid #395b94;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 15vh;
+    width: 30vw;
+    font-size: x-large;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .AutobusComponent:hover {
+    cursor: pointer;
+    background-color: #3382ba;
+    border: 3px solid #3382ba;
+  }
+
+  .NameAutobus {
+
+  }
+
+  .StateAutobus {
+    background-color: grey;
+    height: calc(15vh + 6px);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+    
+}
