@@ -5,9 +5,11 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    min-height: 99vh;
   }
   
   .Login {
+    margin-top: 10vh;
     width: 90vw;
     display: flex;
     flex-direction: column;

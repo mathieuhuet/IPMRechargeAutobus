@@ -5,6 +5,7 @@ import { useEffect, useState, useMemo } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { getSingleChargeur } from '../../../Services/chargeur/getSingleChargeur';
 import { useCookies } from "react-cookie";
+import { FaTrashAlt } from "react-icons/fa";
 
 
 
@@ -39,7 +40,10 @@ const EditChargeur = (props) => {
       }
       {!isMobile &&
         <div className='EditChargeurPage'>
-
+          TEST EDIT CHARGEUR
+          <div className='DeleteChargeur'>
+            <FaTrashAlt />
+          </div>
         </div>
       }
     </div>

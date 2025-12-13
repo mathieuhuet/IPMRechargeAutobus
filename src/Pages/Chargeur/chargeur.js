@@ -22,6 +22,7 @@ const Chargeur = (props) => {
       const allData = await getChargeur(accessToken);
       if (allData.data) {
         let chargeurArray = [];
+        console.log(allData.data);
         for (let i = 0; i < allData.data.length; i++) {
           chargeurArray.push(allData.data[i]);
         }
@@ -38,18 +39,16 @@ const Chargeur = (props) => {
       {isMobile &&
         <div className='ChargeurPage'>
           <div className='ListeChargeur'>
-            <ChargeurComponent 
-              name='Chargeur test'
-            />
-            {chargeur ? chargeur.map((charge) => 
+            {chargeur.length > 0 ? chargeur.map((charge) => 
               <div key={charge.id}>
-              <Link to={'/status/autobus/' + charge.id} style={{textDecoration: 'none'}}>
+              <Link to={'/status/chargeur/' + charge.id} style={{textDecoration: 'none'}}>
                 <ChargeurComponent
                   name={charge.name}
+                  autobus={charge.autobus}
                 />
               </Link>
               </div>
-            ) : <></>}
+            ) : <>Aucun Chargeur.</>}
           </div>
           <div className='AddChargeur'
             onClick={() => navigate('/addchargeur')}
@@ -61,18 +60,16 @@ const Chargeur = (props) => {
       {!isMobile &&
         <div className='ChargeurPage'>
           <div className='ListeChargeur'>
-            <ChargeurComponent 
-              name='Chargeur test'
-            />
-            {chargeur ? chargeur.map((charge) => 
+            {chargeur.length > 0 ? chargeur.map((charge) => 
               <div key={charge.id}>
-              <Link to={'/status/autobus/' + charge.id} style={{textDecoration: 'none'}}>
+              <Link to={'/status/chargeur/' + charge.id} style={{textDecoration: 'none'}}>
                 <ChargeurComponent
                   name={charge.name}
+                  autobus={charge.autobus}
                 />
               </Link>
               </div>
-            ) : <></>}
+            ) : <>Aucun Chargeur.</>}
           </div>
           <div className='AddChargeur'
             onClick={() => navigate('/addchargeur')}

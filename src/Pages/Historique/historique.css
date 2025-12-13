@@ -1,11 +1,25 @@
 @media (min-width: 1024px) {
 
   .HistoriquePage {
-    height: 1000px;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
+  }
+
+  .TableauHistorique {
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vh;
+  }
+
+  .LigneHistorique {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #395b94;
+    border-top: hidden;
   }
 
 }

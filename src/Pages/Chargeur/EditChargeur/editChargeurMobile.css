@@ -7,4 +7,20 @@
     align-items: center;
   }
 
+  .DeleteChargeur {
+    background-color: #cc3f3f;
+    color: black;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4vh;
+    border-radius: 16px;
+  }
+
+  .DeleteChargeur:hover {
+    cursor: pointer;
+  }
+
 }

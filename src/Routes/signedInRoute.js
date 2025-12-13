@@ -38,11 +38,11 @@ const SignedInRoute = (props) => {
           element={<AddChargeur />}
         />
         <Route 
-          path="/status/:prev/:id" 
+          path="/status/autobus/:id" 
           element={<EditAutobus />} 
         />
         <Route 
-          path="/status/:prev/:id" 
+          path="/status/chargeur/:id" 
           element={<EditChargeur />} 
         />
         <Route

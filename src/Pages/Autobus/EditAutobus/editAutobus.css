@@ -2,10 +2,33 @@
 
   .EditAutobusPage {
     height: 1000px;
+    width: 1024px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-self: center;
+  }
+
+  .DeleteAutobus {
+    background-color: #cc3f3f;
+    color: black;
+    height: 8vh;
+    width: 8vh;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    font-size: 4vh;
+    border-radius: 16px;
+  }
+
+  .DeleteAutobus:hover {
+    cursor: pointer;
+  }
+
+  .EditAutobusTop {
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
   }
 
 }

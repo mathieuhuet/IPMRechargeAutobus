@@ -23,12 +23,17 @@
   }
 
   .NameAutobus {
-
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: calc(15vh + 6px);
   }
 
   .StateAutobus {
     background-color: grey;
     height: calc(15vh + 6px);
+    font-size: 3vh;
+    width: 4vh;
     align-items: center;
     justify-content: center;
     display: flex;

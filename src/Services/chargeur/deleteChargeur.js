@@ -4,8 +4,7 @@ import { API } from '../../api';
 export const deleteChargeur = (chargeur, accessToken) => {
   return new Promise((resolve, reject) => {
     axios.delete(
-      `${API}/deleteChargeur/`,
-      chargeur,
+      `${API}/deleteChargeur/${chargeur}`,
       {
         headers: {
           "Content-Type": "application/json",

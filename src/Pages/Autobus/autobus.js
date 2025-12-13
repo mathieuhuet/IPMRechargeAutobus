@@ -41,18 +41,17 @@ const Autobus = () => {
       {isMobile &&
         <div className='AutobusPage'>
           <div className='ListeAutobus'>
-            <AutobusComponent 
-              name='Autobus test'
-            />
-            {autobus ? autobus.map((bus) => 
+            {autobus.length > 0 ? autobus.map((bus) => 
               <div key={bus.id}>
               <Link to={'/status/autobus/' + bus.id} style={{textDecoration: 'none'}}>
                 <AutobusComponent
                   name={bus.name}
+                  level={bus.batteryLevel}
+                  chargeur={bus.charger}
                 />
               </Link>
               </div>
-            ) : <></>}
+            ) : <>Aucun Autobus.</>}
           </div>
           <div className='AddAutobus'
             onClick={() => navigate('/addautobus')}
@@ -64,18 +63,17 @@ const Autobus = () => {
       {!isMobile &&
         <div className='AutobusPage'>
           <div className='ListeAutobus'>
-            <AutobusComponent 
-              name='Autobus test'
-            />
-            {autobus ? autobus.map((bus) => 
+            {autobus.length > 0 ? autobus.map((bus) => 
               <div key={bus.id}>
               <Link to={'/status/autobus/' + bus.id} style={{textDecoration: 'none'}}>
                 <AutobusComponent
                   name={bus.name}
+                  level={bus.batteryLevel}
+                  chargeur={bus.charger}
                 />
               </Link>
               </div>
-            ) : <></>}
+            ) : <>Aucun Autobus.</>}
           </div>
           <div className='AddAutobus'
             onClick={() => navigate('/addautobus')}

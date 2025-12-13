@@ -21,7 +21,6 @@ const AddAutobus = (props) => {
   const [message, setMessage] = useState('');
   
   const handleCreateAutobus = async (credentials, setSubmitting) => {
-    console.log(credentials);
     setMessage('');
     // call backend and move to next page if successful
     try {
@@ -44,148 +43,146 @@ const AddAutobus = (props) => {
     <div>
       {isMobile &&
         <div className='AddAutobusPage'>
-          <div className='Formik'>
-            <Formik
-              initialValues={{ rfid: '', name: '' }}
-              validate={values => {
-                const errors = {};
-                if (!values.rfid) {
-                  errors.rfid = "RFID de l'autobus requis";
-                } else if (!values.name) {
-                  errors.rfid = "Nom de l'autobus requis";
-                }
-                return errors;
-              }}
-              onSubmit={(values, { setSubmitting }) => {
-                handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
-              }}
-            >
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-              }) => (
-                <form onSubmit={handleSubmit} className='AutobusForm'>
-                  <div className='AutobusInput'>
-                    <label
-                      className='label'
-                    >
-                      RFID
-                    </label>
-                    <input
-                      name="rfid"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.email}
-                      className='rfidInput'
-                    />
-                    <label
-                      className='label'
-                    >
-                      Nom de l'autobus
-                    </label>
-                    <input
-                      name="name"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.password}
-                      className='nameInput'
-                    />
-                    <h6>
-                      {message || ' '}
-                    </h6>
+          Créer un nouvel Autobus
+          <Formik
+            initialValues={{ rfid: '', name: '' }}
+            validate={values => {
+              const errors = {};
+              if (!values.rfid) {
+                errors.rfid = "RFID de l'autobus requis";
+              } else if (!values.name) {
+                errors.rfid = "Nom de l'autobus requis";
+              }
+              return errors;
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form onSubmit={handleSubmit} className='AutobusForm'>
+                <div className='AutobusInput'>
+                  <label
+                    className='label'
+                  >
+                    RFID
+                  </label>
+                  <input
+                    name="rfid"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className='rfidInput'
+                  />
+                  <label
+                    className='label'
+                  >
+                    Nom de l'autobus
+                  </label>
+                  <input
+                    name="name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                    className='nameInput'
+                  />
+                  <h6>
+                    {message || ' '}
+                  </h6>
+                </div>
+                {isSubmitting && 
+                  <div className='Loading'>
+                    <Spinner/>
                   </div>
-                  {isSubmitting && 
-                    <div className='Loading'>
-                      <Spinner/>
-                    </div>
-                  }
-                  {!isSubmitting && 
-                    <button type="submit" disabled={isSubmitting} className='SubmitAutobus'>
-                      Ajouter Autobus
-                    </button>
-                  }
-                </form>
-              )}
-            </Formik>
-          </div>
+                }
+                {!isSubmitting && 
+                  <button type="submit" disabled={isSubmitting} className='SubmitAutobus'>
+                    Ajouter Autobus
+                  </button>
+                }
+              </form>
+            )}
+          </Formik>
         </div>
       }
       {!isMobile &&
         <div className='AddAutobusPage'>
-          <div className='Formik'>
-            <Formik
-              initialValues={{ rfid: '', name: '' }}
-              validate={values => {
-                const errors = {};
-                if (!values.rfid) {
-                  errors.rfid = "RFID de l'autobus requis";
-                } else if (!values.name) {
-                  errors.rfid = "Nom de l'autobus requis";
-                }
-                return errors;
-              }}
-              onSubmit={(values, { setSubmitting }) => {
-                handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
-              }}
-            >
-              {({
-                values,
-                errors,
-                touched,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-                isSubmitting,
-              }) => (
-                <form onSubmit={handleSubmit} className='AutobusForm'>
-                  <div className='AutobusInput'>
-                    <label
-                      className='label'
-                    >
-                      RFID
-                    </label>
-                    <input
-                      name="rfid"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.email}
-                      className='rfidInput'
-                    />
-                    <label
-                      className='label'
-                    >
-                      Nom de l'autobus
-                    </label>
-                    <input
-                      name="name"
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      value={values.password}
-                      className='nameInput'
-                    />
-                    <h6>
-                      {message || ' '}
-                    </h6>
+          Créer un nouvel Autobus
+          <Formik
+            initialValues={{ rfid: '', name: '' }}
+            validate={values => {
+              const errors = {};
+              if (!values.rfid) {
+                errors.rfid = "RFID de l'autobus requis";
+              } else if (!values.name) {
+                errors.rfid = "Nom de l'autobus requis";
+              }
+              return errors;
+            }}
+            onSubmit={(values, { setSubmitting }) => {
+              handleCreateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
+            }}
+          >
+            {({
+              values,
+              errors,
+              touched,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              isSubmitting,
+            }) => (
+              <form onSubmit={handleSubmit} className='AutobusForm'>
+                <div className='AutobusInput'>
+                  <label
+                    className='label'
+                  >
+                    RFID
+                  </label>
+                  <input
+                    name="rfid"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.email}
+                    className='rfidInput'
+                  />
+                  <label
+                    className='label'
+                  >
+                    Nom de l'autobus
+                  </label>
+                  <input
+                    name="name"
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    value={values.password}
+                    className='nameInput'
+                  />
+                  <h6>
+                    {message || ' '}
+                  </h6>
+                </div>
+                {isSubmitting && 
+                  <div className='Loading'>
+                    <Spinner/>
                   </div>
-                  {isSubmitting && 
-                    <div className='Loading'>
-                      <Spinner/>
-                    </div>
-                  }
-                  {!isSubmitting && 
-                    <button type="submit" disabled={isSubmitting} className='SubmitAutobus'>
-                      Ajouter Autobus
-                    </button>
-                  }
-                </form>
-              )}
-            </Formik>
-          </div>
+                }
+                {!isSubmitting && 
+                  <button type="submit" disabled={isSubmitting} className='SubmitAutobus'>
+                    Ajouter Autobus
+                  </button>
+                }
+              </form>
+            )}
+          </Formik>
         </div>
       }
     </div>

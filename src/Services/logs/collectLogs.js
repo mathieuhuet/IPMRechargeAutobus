@@ -4,7 +4,7 @@ import { API } from '../../api';
 export const collectLogs = (accessToken) => {
   return new Promise((resolve, reject) => {
     axios.get(
-      `${API}/collectActions/`, 
+      `${API}/collectLogs/`, 
       {
         headers: {
           "Content-Type": "application/json",

@@ -34,5 +34,3 @@ The front-end framework is **React.js**
 The back-end server is **Koa**
 
 The database is **PortgreSQL**
-
-The Map API is **Google Map Platform**

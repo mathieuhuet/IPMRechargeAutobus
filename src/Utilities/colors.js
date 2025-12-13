@@ -6,7 +6,7 @@ export const colors = {
   neonGreen: '#d8f537',
   lightGray: "#c3c3c3",
   success: "#22C55E",
-  failure: "#EF4444",
+  failure: "#cc3f3f",
   darkBlue: '#395b94',
   lightBlue: '#3382ba',
   neonBlue: '#08d6fe',

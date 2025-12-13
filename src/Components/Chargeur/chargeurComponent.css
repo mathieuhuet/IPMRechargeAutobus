@@ -27,8 +27,9 @@
   }
 
   .StateChargeur {
-    background-color: grey;
     height: calc(15vh + 6px);
+    font-size: 2vh;
+    width: 6vh;
     align-items: center;
     justify-content: center;
     display: flex;
