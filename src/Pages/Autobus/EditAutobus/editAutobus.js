@@ -17,7 +17,7 @@ import { deleteAutobus } from '../../../Services/autobus/deleteAutobus';
 
 
 const EditAutobus = (props) => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
     const [cookies, setCookie] = useCookies(['accessToken']);
     const { prev, id } = useParams();
     const [ autobus, setAutobus ] = useState({name: '', level: '', chargeur: '', rfid: ''});

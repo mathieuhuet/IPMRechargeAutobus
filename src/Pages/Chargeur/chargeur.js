@@ -12,7 +12,7 @@ import { getChargeur } from '../../Services/chargeur/getChargeur';
 
 const Chargeur = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [chargeur, setChargeur] = useState([]);
@@ -38,6 +38,11 @@ const Chargeur = (props) => {
     <div>
       {isMobile &&
         <div className='ChargeurPage'>
+          <div className='AddChargeur'
+            onClick={() => navigate('/addchargeur')}
+          >
+            <TiPlus />
+          </div>
           <div className='ListeChargeur'>
             {chargeur.length > 0 ? chargeur.map((charge) => 
               <div key={charge.id}>
@@ -49,11 +54,6 @@ const Chargeur = (props) => {
               </Link>
               </div>
             ) : <>Aucun Chargeur.</>}
-          </div>
-          <div className='AddChargeur'
-            onClick={() => navigate('/addchargeur')}
-          >
-            <TiPlus />
           </div>
         </div>
       }

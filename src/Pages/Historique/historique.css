@@ -1,4 +1,4 @@
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
 
   .HistoriquePage {
     min-height: 100vh;
@@ -21,5 +21,13 @@
     border: 2px solid #395b94;
     border-top: hidden;
   }
+  
+  .LigneHistoriqueTop {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #395b94;
+    border-top: hidden;
+    font-weight: bolder;
+  }  
 
 }

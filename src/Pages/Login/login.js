@@ -13,7 +13,7 @@ import { useWindowDimensions } from '../../Utilities/windowDimension';
 
 
 const Login = (props) => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const { height, width } = useWindowDimensions();
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [message, setMessage] = useState('');

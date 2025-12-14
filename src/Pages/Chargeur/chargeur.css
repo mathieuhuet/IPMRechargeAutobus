@@ -1,7 +1,7 @@
-@media (min-width: 1024px) {
+@media (min-width: 1200px) {
 
   .ChargeurPage {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: flex-end;
     align-items: flex-start;
@@ -27,12 +27,12 @@
   }
 
   .ListeChargeur {
-    width: 960px;
+    width: 1024px;
     justify-self: center;
+    flex-wrap: wrap;
     display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
   }
-
 }

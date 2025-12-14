@@ -1,10 +1,11 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
 
   .HistoriquePage {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    min-height: 100vh;
   }
 
   .TableauHistorique {
@@ -18,5 +19,13 @@
     justify-content: space-evenly;
     border: 2px solid #395b94;
   }
+
+  .LigneHistoriqueTop {
+    display: flex;
+    justify-content: space-evenly;
+    border: 2px solid #395b94;
+    border-top: hidden;
+    font-weight: bolder;
+  }  
 
 }

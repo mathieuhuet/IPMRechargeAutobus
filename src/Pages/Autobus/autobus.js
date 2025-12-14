@@ -14,7 +14,7 @@ import { TiPlus } from "react-icons/ti";
 
 const Autobus = () => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [autobus, setAutobus] = useState([]);
@@ -40,6 +40,11 @@ const Autobus = () => {
     <div>
       {isMobile &&
         <div className='AutobusPage'>
+          <div className='AddAutobus'
+            onClick={() => navigate('/addautobus')}
+          >
+            <TiPlus />
+          </div>
           <div className='ListeAutobus'>
             {autobus.length > 0 ? autobus.map((bus) => 
               <div key={bus.id}>
@@ -52,11 +57,6 @@ const Autobus = () => {
               </Link>
               </div>
             ) : <>Aucun Autobus.</>}
-          </div>
-          <div className='AddAutobus'
-            onClick={() => navigate('/addautobus')}
-          >
-            <TiPlus />
           </div>
         </div>
       }

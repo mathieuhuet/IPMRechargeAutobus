@@ -1,24 +1,26 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
 
   .AutobusPage {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
-    justify-content: flex-end;
-    align-items: flex-start;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     margin: 4vh;
   }
 
   .AddAutobus {
-    height: 8vh;
-    width: 8vh;
+    height: 4vh;
+    width: 80vw;
     border-radius: 1vh;
-    font-size: 4vh;
+    font-size: 3vh;
     background-color: #5ea453;
     color: #f6f6f6;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 2vw;
+    margin-bottom: 8vh;
   }
 
   .AddAutobus:hover {
@@ -27,7 +29,6 @@
   }
 
   .ListeAutobus {
-    width: 960px;
     justify-self: center;
     display: flex;
     flex-direction: column;

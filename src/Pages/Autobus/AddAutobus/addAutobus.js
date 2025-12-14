@@ -17,7 +17,7 @@ import { createAutobus } from '../../../Services/autobus/createAutobus';
 const AddAutobus = (props) => {
   let navigate = useNavigate();
   const [cookies, setCookie] = useCookies(['accessToken']);
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [message, setMessage] = useState('');
   
   const handleCreateAutobus = async (credentials, setSubmitting) => {

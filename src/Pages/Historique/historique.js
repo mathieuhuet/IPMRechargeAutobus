@@ -12,7 +12,7 @@ import { color } from 'framer-motion';
 
 const Historique = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [logs, setLogs] = useState([{}]);
@@ -34,7 +34,7 @@ const Historique = (props) => {
       {isMobile &&
         <div className='HistoriquePage' style={{color: 'black'}}>
           <div className='TableauHistorique'>
-            <div className='LigneHistorique'>
+            <div className='LigneHistoriqueTop'>
               <div style={{borderRight: 'solid 2px #395b94', width: '30%', borderTop:'solid 2px #395b94'}}>
                 Utilisateur
               </div>
@@ -64,7 +64,7 @@ const Historique = (props) => {
       {!isMobile &&
         <div className='HistoriquePage' style={{color: 'black'}}>
           <div className='TableauHistorique'>
-            <div className='LigneHistorique'>
+            <div className='LigneHistoriqueTop'>
               <div style={{borderRight: 'solid 2px #395b94', width: 341, borderTop:'solid 2px #395b94'}}>
                 Utilisateur
               </div>

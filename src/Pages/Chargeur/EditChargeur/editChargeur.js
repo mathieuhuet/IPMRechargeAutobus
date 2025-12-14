@@ -12,7 +12,7 @@ import { FaTrashAlt } from "react-icons/fa";
 
 
 const EditChargeur = (props) => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [cookies, setCookie] = useCookies(['accessToken']);
   const { prev, id } = useParams();
   const [ chargeur, setChargeur ] = useState([]);

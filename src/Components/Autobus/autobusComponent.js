@@ -10,7 +10,7 @@ import { FaCarBattery } from "react-icons/fa";
 
 const AutobusComponent = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
 
 
 

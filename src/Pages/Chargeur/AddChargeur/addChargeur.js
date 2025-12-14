@@ -17,7 +17,7 @@ import { createChargeur } from '../../../Services/chargeur/createChargeur';
 const AddChargeur = (props) => {
   let navigate = useNavigate();
   const [cookies, setCookie] = useCookies(['accessToken']);
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [message, setMessage] = useState('');
   
   const handleCreateChargeur = async (credentials, setSubmitting) => {

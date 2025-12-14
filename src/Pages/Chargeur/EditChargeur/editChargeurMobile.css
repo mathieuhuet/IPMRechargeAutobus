@@ -1,6 +1,7 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
 
   .EditChargeurPage {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;

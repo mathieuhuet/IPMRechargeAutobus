@@ -10,7 +10,7 @@ import { BsLightningFill } from "react-icons/bs";
 
 const ChargeurComponent = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
 
 
 

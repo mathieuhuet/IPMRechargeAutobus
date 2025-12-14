@@ -1,11 +1,12 @@
-@media (max-width: 1023px) {
+@media (max-width: 1200px) {
 
   .AddAutobusPage {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     color: #395b94;
+    min-height: 100vh;
   }
 
   .Formik {
@@ -25,7 +26,6 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 16px;
-    border: 3px solid #395b94;
     border-radius: 10px;
     padding: 8vw;
   }

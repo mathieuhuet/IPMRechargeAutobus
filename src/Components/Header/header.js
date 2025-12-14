@@ -7,6 +7,8 @@ import { FaBus } from "react-icons/fa";
 import { MdElectricalServices } from "react-icons/md";
 import { FaClock } from "react-icons/fa";
 import { FaInfoCircle } from "react-icons/fa";
+import { FaUserAlt } from "react-icons/fa";
+
 
 
 import Box from '@mui/material/Box';
@@ -22,7 +24,7 @@ import Logo from '../../Assets/STL-logo-horizontal-color.svg';
 
 const Header = (props) => {
   let navigate = useNavigate();
-  const isMobile = useMediaQuery({ query: '(max-width: 1023px)' });
+  const isMobile = useMediaQuery({ query: '(max-width: 1200px)' });
   const [showNavbar, setShowNavbar] = useState(true);
   const [drawerState, setDrawerState] = useState(false);
 
@@ -79,8 +81,7 @@ const Header = (props) => {
             onClick={() => navigate('/about')}
           >
             <div className='menu-button'>
-              <FaInfoCircle />
-              {" À propos "}
+              <FaUserAlt />
             </div>
           </ListItemButton>
         </ListItem>
@@ -200,8 +201,7 @@ const Header = (props) => {
         <div className='header-selection'
           onClick={() => navigate('/about')}
         >
-          <FaInfoCircle />
-          {"À propos"}
+          <FaUserAlt />
         </div>
       </div>
     )
