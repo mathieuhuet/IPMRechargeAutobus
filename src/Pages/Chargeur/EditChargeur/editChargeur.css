@@ -1,11 +1,11 @@
 @media (min-width: 1200px) {
 
   .EditChargeurPage {
-    min-height: 100vh;
+    height: 1000px;
+    width: 1024px;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-self: center;
   }
 
   .DeleteChargeur {
@@ -18,9 +18,37 @@
     align-items: center;
     font-size: 4vh;
     border-radius: 16px;
+    align-self: center;
   }
 
   .DeleteChargeur:hover {
+    cursor: pointer;
+  }
+
+  .EditChargeurTop {
+    width: 1024px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+  }
+
+  .EditChargeurBottom {
+    display: flex;
+    width: 1024px;
+  }
+
+  .DisconnectChargeur {
+    border: 3px solid #3382ba;
+    color: #5ea453;
+    font-weight: bolder;
+    border-radius: 16px;
+    padding: 8px;
+    height: fit-content;
+    align-self: center;
+  }
+
+  .DisconnectChargeur:hover {
+    border: 3px solid #395b94;
     cursor: pointer;
   }
 

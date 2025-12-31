@@ -22,7 +22,6 @@ const Chargeur = (props) => {
       const allData = await getChargeur(accessToken);
       if (allData.data) {
         let chargeurArray = [];
-        console.log(allData.data);
         for (let i = 0; i < allData.data.length; i++) {
           chargeurArray.push(allData.data[i]);
         }

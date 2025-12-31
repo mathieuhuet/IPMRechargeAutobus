@@ -18,6 +18,7 @@
     align-items: center;
     font-size: 4vh;
     border-radius: 16px;
+    align-self: center;
   }
 
   .DeleteAutobus:hover {
@@ -29,6 +30,19 @@
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
+  }
+
+  .EditAutobusBottom {
+    display: flex;
+    width: 1024px;
+  }
+
+  .ChargeurSelect {
+    border: 3px solid #395b94;
+    border-radius: 16px;
+    padding: 8px;
+    height: fit-content;
+    align-self: center;
   }
 
 }

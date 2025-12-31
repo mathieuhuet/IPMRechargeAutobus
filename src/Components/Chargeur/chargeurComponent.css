@@ -18,7 +18,6 @@
   }
 
   .ChargeurComponent:hover {
-    cursor: pointer;
     background-color: #3382ba;
     border: 3px solid #3382ba;
   }
