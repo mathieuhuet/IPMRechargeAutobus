@@ -4,11 +4,11 @@ import { useEffect, useState, useMemo } from 'react';
 import { useCookies } from "react-cookie";
 import { useNavigate, Link } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
-import { getUserInfo } from '../../Services/user/getUserInfo';
+import { getChargeur } from '../../Services/chargeur/getChargeur';
 import { getAutobus } from '../../Services/autobus/getAutobus';
 import AutobusComponent from '../../Components/Autobus/autobusComponent';
 import { TiPlus } from "react-icons/ti";
-
+import { sortByName } from '../../Utilities/sortAlphabetically';
 
 
 
@@ -18,16 +18,23 @@ const Autobus = () => {
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [autobus, setAutobus] = useState([]);
+  const [allChargeur, setAllChargeur] = useState([]);
 
   useEffect(() => {
     async function fetchData(accessToken) {
+      const chargeurs = await getChargeur(accessToken);
+      if (chargeurs.data) {
+        setAllChargeur(sortByName(chargeurs.data));
+      } else {
+        console.log('problem fetching all chargeurs')
+      }
       const allData = await getAutobus(accessToken);
       if (allData.data) {
         let autobusArray = [];
         for (let i = 0; i < allData.data.length; i++) {
           autobusArray.push(allData.data[i]);
         }
-        setAutobus(autobusArray);
+        setAutobus(sortByName(autobusArray));
       } else {
         console.log('problem fetching data');
       }
@@ -35,6 +42,16 @@ const Autobus = () => {
     fetchData(cookies.accessToken);
   }, [refresh]);
 
+  function provideChargeurNameToComponent (chargeurID) {
+    let chargeurName = "";
+    for (let i = 0; i < allChargeur.length; i++) {
+      if (allChargeur[i].id == chargeurID) {
+        chargeurName = allChargeur[i].name;
+        i = allChargeur.length;
+      }
+    }
+    return chargeurName;
+  }
 
   return (
     <div>
@@ -53,6 +70,7 @@ const Autobus = () => {
                   name={bus.name}
                   level={bus.batteryLevel}
                   chargeur={bus.charger}
+                  chargeurName={provideChargeurNameToComponent(bus.charger)}
                 />
               </Link>
               </div>
@@ -70,6 +88,7 @@ const Autobus = () => {
                   name={bus.name}
                   level={bus.batteryLevel}
                   chargeur={bus.charger}
+                  chargeurName={provideChargeurNameToComponent(bus.charger)}
                 />
               </Link>
               </div>

@@ -18,7 +18,7 @@ import Select from '@mui/material/Select';
 import { MenuItem } from '@mui/material';
 import { getChargeur } from '../../../Services/chargeur/getChargeur';
 import { associateAutobusChargeur } from '../../../Services/autobus/associateAutobusChargeur';
-
+import { sortByName } from '../../../Utilities/sortAlphabetically';
 
 
 const EditAutobus = (props) => {
@@ -29,6 +29,7 @@ const EditAutobus = (props) => {
   const [batteryHistory, setBatteryHistory] = useState([]);
   const [chargeur, setChargeur] = useState(0);
   const [allChargeur, setAllChargeur] = useState([]);
+  const [message, setMessage] = useState('');
   const [refresh, setRefresh] = useState(0);
   let navigate = useNavigate();
 
@@ -36,29 +37,30 @@ const EditAutobus = (props) => {
   const graphData = useMemo(() => {
     const timeLabels = [];
     const batteryLevel = [];
+    const chargingState = [];
 
     for (let k = 0; k < batteryHistory.length; k++) {
       timeLabels.push(new Date(batteryHistory[k].createdAt).toLocaleTimeString("en-GB").slice(0, -3));
       !batteryHistory[k].battery ? batteryLevel.push(NaN) : batteryLevel.push(batteryHistory[k].battery);
+      batteryHistory[k].charging ? chargingState.push(true) : chargingState.push(false);
     }
-
     const result = {
       timeLabels: timeLabels,
-      batteryLevel: batteryLevel
+      batteryLevel: batteryLevel,
+      chargingState: chargingState
     }
-
     return result;
   }, [batteryHistory])
   
   useEffect(() => {
     async function fetchData(accessToken) {
-      const allData = await getSingleAutobus(id, accessToken);
       const chargeurs = await getChargeur(accessToken);
       if (chargeurs.data) {
-        setAllChargeur(chargeurs.data);
+        setAllChargeur(sortByName(chargeurs.data));
       } else {
         console.log('problem fetching all chargeurs')
       }
+      const allData = await getSingleAutobus(id, accessToken);
       if (allData.data) {
         setAutobus({name: allData.data.name, level: allData.data.batteryLevel, chargeur: allData.data.charger, rfid: allData.data.rfid, createdAt: allData.data.createdAt, createdBy: allData.data.createdBy, id: allData.data.id, lastCharge: allData.data.lastCharge, updatedAt: allData.data.updatedAt});
         setChargeur(allData.data.charger);
@@ -78,10 +80,14 @@ const EditAutobus = (props) => {
   const handleDeleteAutobus = async () => {
     // call backend and move to next page if successful
     try {
-      const result = await deleteAutobus(id, cookies.accessToken);
-      console.log(result);
-      if (result.data) {
-        navigate('/autobus');
+      if (autobus.chargeur != 0) {
+        setMessage("Vous devez déconnecter l'autobus du chargeur avant de pouvoir le supprimer.")
+      } else {
+        const result = await deleteAutobus(id, cookies.accessToken);
+        console.log(result);
+        if (result.data) {
+          navigate('/autobus');
+        }
       }
     } catch (error) {
       if (error.message) {
@@ -89,7 +95,7 @@ const EditAutobus = (props) => {
       }
       console.log(error);
     }
-  }
+  };
 
   const handleUpdateAutobus = async (updatedValue, setSubmitting) => {
     try {
@@ -105,7 +111,7 @@ const EditAutobus = (props) => {
       console.log(error);
       setSubmitting(false);
     }
-  }
+  };
 
   const handleChargeurChange = async (event) => {
     try {
@@ -122,11 +128,138 @@ const EditAutobus = (props) => {
     }
   };
 
+  function provideChargeurNameToComponent (chargeurID) {
+    let chargeurName = "";
+    for (let i = 0; i < allChargeur.length; i++) {
+      if (allChargeur[i].id == chargeurID) {
+        chargeurName = allChargeur[i].name;
+        i = allChargeur.length;
+      }
+    }
+    return chargeurName;
+  }
+
   return (
     <div>
       {isMobile &&
         <div className='EditAutobusPage'>
-        
+          <div className='EditAutobusTop'>
+            <div>
+              <AutobusComponent
+                name={autobus.name}
+                level={autobus.level}
+                chargeur={autobus.chargeur}
+                chargeurName={provideChargeurNameToComponent(autobus.chargeur)}
+              />
+            </div>
+            <div className='ChargeurSelect'>
+              <div>
+                Changer le chargeur utilisé : 
+              </div>
+              <div>
+                <FormControl variant='standard' sx={{ m: 1}}>
+                  <Select
+                    labelId="demo-simple-select-standard-label"
+                    id="demo-simple-select-standard"
+                    value={chargeur}
+                    onChange={handleChargeurChange}
+                  >
+                    <MenuItem value={0}>Déconnecter</MenuItem>
+                    {allChargeur.map((chargeur) =>
+                      chargeur.autobus == 0 || chargeur.autobus == id ?
+                      <MenuItem value={chargeur.id}>{chargeur.name}</MenuItem>
+                      : <></>
+                    )}
+                  </Select>
+                </FormControl>
+              </div>
+            </div>
+            <div >
+              <BatteryGraph
+                timelabels={graphData.timeLabels}
+                batteryLevel={graphData.batteryLevel}
+                chargingState={graphData.chargingState}
+              />
+            </div>
+          </div>
+          <div className='EditAutobusBottom'>
+            <div className='Formik'>
+              <Formik
+                initialValues={{ rfid: autobus.rfid, name: autobus.name }}
+                validate={values => {
+                  const errors = {};
+                  if (!values.rfid) {
+                    errors.rfid = "RFID de l'autobus requis";
+                  } else if (!values.name) {
+                    errors.rfid = "Nom de l'autobus requis";
+                  }
+                  return errors;
+                }}
+                onSubmit={(values, { setSubmitting }) => {
+                  handleUpdateAutobus({rfid: values.rfid.toUpperCase(), name: values.name}, setSubmitting)
+                }}
+              >
+                {({
+                  values,
+                  errors,
+                  touched,
+                  handleChange,
+                  handleBlur,
+                  handleSubmit,
+                  isSubmitting,
+                }) => (
+                  <form onSubmit={handleSubmit} className='ModifyAutobusForm'>
+                    <div className='AutobusInput'>
+                      <label
+                        className='label'
+                      >
+                        RFID
+                      </label>
+                      <input
+                        name="rfid"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.rfid}
+                        className='EditRFIDInput'
+                        placeholder={autobus.rfid}
+                      />
+                      <label
+                        className='label'
+                      >
+                        Nom de l'autobus
+                      </label>
+                      <input
+                        name="name"
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        value={values.name}
+                        className='EditNameInput'
+                        placeholder={autobus.name}
+                        minLength="4"
+                        maxLength="12"
+                      />
+                    </div>
+                    {isSubmitting && 
+                      <div className='Loading'>
+                        <Spinner/>
+                      </div>
+                    }
+                    {!isSubmitting && 
+                      <button type="submit" disabled={isSubmitting} className='SubmitEditAutobus'>
+                        Modifier Autobus
+                      </button>
+                    }
+                  </form>
+                )}
+              </Formik>
+            </div>
+          </div>
+          <div className='DeleteAutobus' onClick={handleDeleteAutobus}>
+            <FaTrashAlt />
+          </div>
+          <h6>
+            {message || ' '}
+          </h6>
         </div>
       }
       {!isMobile &&
@@ -136,6 +269,7 @@ const EditAutobus = (props) => {
               name={autobus.name}
               level={autobus.level}
               chargeur={autobus.chargeur}
+              chargeurName={provideChargeurNameToComponent(autobus.chargeur)}
             />
             <div className='ChargeurSelect'>
               <div>
@@ -216,6 +350,8 @@ const EditAutobus = (props) => {
                         value={values.name}
                         className='nameInput'
                         placeholder={autobus.name}
+                        minLength="4"
+                        maxLength="12"
                       />
                     </div>
                     {isSubmitting && 
@@ -232,13 +368,17 @@ const EditAutobus = (props) => {
                 )}
               </Formik>
             </div>
-            <div>
+            <div style={{marginLeft: '16px'}}>
               <BatteryGraph
                 timelabels={graphData.timeLabels}
                 batteryLevel={graphData.batteryLevel}
+                chargingState={graphData.chargingState}
               />
             </div>
           </div>
+          <h6>
+            {message || ' '}
+          </h6>
         </div>
       }
     </div>

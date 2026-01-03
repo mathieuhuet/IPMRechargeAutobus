@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Header from "./Components/Header/header";
 import Bottom from "./Components/Bottom/bottom";
+import ScrollToTop from "./Utilities/scrollToTop";
 // Auth
 import { useCookies } from 'react-cookie';
 import { getUserInfo } from './Services/user/getUserInfo';
@@ -29,6 +30,7 @@ function App() {
   return (
     <div className="app">
       <Router>
+        <ScrollToTop />
         <Header
           allowMobileMenu={allowMobileMenu}
         />

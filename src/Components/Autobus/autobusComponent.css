@@ -29,6 +29,16 @@
     height: calc(15vh + 6px);
   }
 
+  .AutobusConnected {
+    font-size: large;
+  }
+
+  .AutobusContainerRight {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
   .StateAutobus {
     background-color: grey;
     height: calc(15vh + 6px);
@@ -37,6 +47,12 @@
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+
+  .AutobusBatteryLevel {
+    font-weight: 600;
+    margin-right: -8px;
+    width: 64px;
   }
     
 }

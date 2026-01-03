@@ -51,7 +51,7 @@ const AddAutobus = (props) => {
               if (!values.rfid) {
                 errors.rfid = "RFID de l'autobus requis";
               } else if (!values.name) {
-                errors.rfid = "Nom de l'autobus requis";
+                errors.name = "Nom de l'autobus requis";
               }
               return errors;
             }}
@@ -77,6 +77,7 @@ const AddAutobus = (props) => {
                   </label>
                   <input
                     name="rfid"
+                    type='text'
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
@@ -89,10 +90,13 @@ const AddAutobus = (props) => {
                   </label>
                   <input
                     name="name"
+                    type='text'
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
                     className='nameInput'
+                    minLength="4"
+                    maxLength="12"
                   />
                   <h6>
                     {message || ' '}
@@ -165,6 +169,8 @@ const AddAutobus = (props) => {
                     onBlur={handleBlur}
                     value={values.password}
                     className='nameInput'
+                    minLength="4"
+                    maxLength="12"
                   />
                   <h6>
                     {message || ' '}

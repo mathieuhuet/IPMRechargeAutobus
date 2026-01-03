@@ -93,6 +93,8 @@ const AddChargeur = (props) => {
                     onBlur={handleBlur}
                     value={values.password}
                     className='nameInput'
+                    minLength="4"
+                    maxLength="12"
                   />
                   <h6>
                     {message || ' '}
@@ -165,6 +167,8 @@ const AddChargeur = (props) => {
                     onBlur={handleBlur}
                     value={values.password}
                     className='nameInput'
+                    minLength="4"
+                    maxLength="12"
                   />
                   <h6>
                     {message || ' '}

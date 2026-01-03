@@ -19,20 +19,25 @@ const ChargeurComponent = (props) => {
       <div className='NameChargeur'>
         {props.name}
       </div>
-      {props.autobus === '0' ? 
-        <div className='StateChargeur' style={{backgroundColor: '#3382ba', display: 'flex', flexDirection: 'column'}}>
-          <div>Pas</div><div>Utilisé</div>
-        </div>
-        :
-        props.autobus ?
-        <div className='StateChargeur' style={{backgroundColor: '#5ea453'}}>
-          <BsLightningFill />
-        </div>
-        :
-        <div className='StateChargeur' style={{backgroundColor: 'grey'}}>
-          ??
-        </div>
-      }
+      <div className='ChargeurComponentBottom'>
+        {props.autobus === '0' ? 
+          <div className='StateChargeur' style={{backgroundColor: '#395b94', display: 'flex', flexDirection: 'column'}}>
+            <div>Pas Utilisé</div>
+          </div>
+          :
+          props.autobus ?
+          <div>
+            <div className='StateChargeur' style={{backgroundColor: '#5ea453'}}>
+              <BsLightningFill /> Charging <BsLightningFill />
+            </div>
+            <div className='ChargeurComponentAutobusName'>{props.autobusName}</div>
+          </div>
+          :
+          <div className='StateChargeur' style={{backgroundColor: 'grey'}}>
+            ??
+          </div>
+        }
+      </div>
     </div>
   );
 }

@@ -7,7 +7,8 @@ import { useCookies } from "react-cookie";
 import ChargeurComponent from '../../Components/Chargeur/chargeurComponent';
 import { TiPlus } from "react-icons/ti";
 import { getChargeur } from '../../Services/chargeur/getChargeur';
-
+import { getAutobus } from '../../Services/autobus/getAutobus';
+import { sortByName } from '../../Utilities/sortAlphabetically';
 
 
 const Chargeur = (props) => {
@@ -16,22 +17,44 @@ const Chargeur = (props) => {
   const [cookies, setCookie] = useCookies(['accessToken']);
   const [refresh, setRefresh] = useState(0);
   const [chargeur, setChargeur] = useState([]);
+  const [allAutobus, setAllAutobus] = useState([]);
 
   useEffect(() => {
     async function fetchData(accessToken) {
+      const allAutobusData = await getAutobus(accessToken);
+      if (allAutobusData.data) {
+        let autobusArray = [];
+        for (let i = 0; i < allAutobusData.data.length; i++) {
+          autobusArray.push(allAutobusData.data[i]);
+        }
+        setAllAutobus(sortByName(autobusArray));
+      } else {
+        console.log('problem fetching data');
+      }
       const allData = await getChargeur(accessToken);
       if (allData.data) {
         let chargeurArray = [];
         for (let i = 0; i < allData.data.length; i++) {
           chargeurArray.push(allData.data[i]);
         }
-        setChargeur(chargeurArray);
+        setChargeur(sortByName(chargeurArray));
       } else {
         console.log('problem fetching data');
       }
     }
     fetchData(cookies.accessToken);
   }, [refresh]);
+
+  function provideAutobusNameToComponent (autobusID) {
+    let autobusName = "";
+    for (let i = 0; i < allAutobus.length; i++) {
+      if (allAutobus[i].id == autobusID) {
+        autobusName = allAutobus[i].name;
+        i = allAutobus.length;
+      }
+    }
+    return autobusName;
+  }
 
   return (
     <div>
@@ -49,6 +72,7 @@ const Chargeur = (props) => {
                 <ChargeurComponent
                   name={charge.name}
                   autobus={charge.autobus}
+                  autobusName={provideAutobusNameToComponent(charge.autobus)}
                 />
               </Link>
               </div>
@@ -65,6 +89,7 @@ const Chargeur = (props) => {
                 <ChargeurComponent
                   name={charge.name}
                   autobus={charge.autobus}
+                  autobusName={provideAutobusNameToComponent(charge.autobus)}
                 />
               </Link>
               </div>

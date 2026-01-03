@@ -2,37 +2,42 @@
 
   .ChargeurComponent {
     color: #f6f6f6;
-    background-color: #395b94;
-    border: 3px solid #395b94;
+    background-color: #3382ba;
+    border: 3px solid #3382ba;
     border-radius: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 15vh;
-    width: 440px;
+    height: 128px;
+    width: 256px;
     font-size: x-large;
     margin-bottom: 16px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    margin: 4px
+    margin: 16px
   }
 
   .ChargeurComponent:hover {
-    background-color: #3382ba;
-    border: 3px solid #3382ba;
+    background-color: #395b94;
+    border: 3px solid #395b94;
   }
 
   .NameChargeur {
+    margin-top: 16px;
+  }
 
+  .ChargeurComponentBottom {
+    margin-top: 16px
   }
 
   .StateChargeur {
-    height: calc(15vh + 6px);
-    font-size: 2vh;
-    width: 6vh;
+    width: 262px;
     align-items: center;
     justify-content: center;
     display: flex;
+  }
+
+  .ChargeurComponentAutobusName {
+    font-size: large;
   }
 
 }

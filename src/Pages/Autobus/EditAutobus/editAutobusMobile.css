@@ -1,9 +1,10 @@
 @media (max-width: 1200px) {
 
   .EditAutobusPage {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-self: center;
     align-items: center;
   }
 
@@ -11,16 +12,89 @@
     background-color: #cc3f3f;
     color: black;
     height: 8vh;
-    width: 8vh;
+    width: 60vw;
+    max-width: 440px;
+    border-radius: 1vh;
+    font-size: 5vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4vh;
-    border-radius: 16px;
+    margin: 2vw;
+    margin-bottom: 4vh;
   }
 
   .DeleteAutobus:hover {
     cursor: pointer;
+  }
+
+  .EditAutobusTop {
+    margin-top: 32px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .EditAutobusBottom {
+    display: flex;
+  }
+
+  .ChargeurSelect {
+    border: 3px solid #395b94;
+    border-radius: 16px;
+    padding: 8px;
+    height: fit-content;
+    align-self: center;
+    width: 80vw;
+    max-width: 440px;
+    margin-bottom: 32px;
+  }
+
+  .SubmitEditAutobus {
+    margin-top: 8px;
+    background-color: #395b94;
+    font-size: 16px;
+    height: 4vh;
+    width: 80vw;
+    max-width: 440px;
+    border-radius: 10px;
+    color: #f6f6f6;
+    border: none;
+    font-family: Gilroy-Medium,Helvetica,Arial,sans-serif;
+    --fa-style-family-classic: "Font Awesome 6 Free";
+    --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+    --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .SubmitEditAutobus:hover {
+    cursor: pointer;
+  }
+
+  .EditNameInput {
+    background-color: #f6f6f6;
+    border: 3px solid #395b94;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+    max-width: 440px;
+  }
+
+  .EditRFIDInput {
+    background-color: #f6f6f6;
+    border: 3px solid #395b94;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 5vh;
+    width: 80vw;
+    font-size: medium;
+    margin-bottom: 20px;
+    max-width: 440px;
   }
 
 }
